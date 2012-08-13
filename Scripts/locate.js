@@ -13,9 +13,9 @@
  /**********Global *******************/
  
  var routeJSON = [],
-				locate,
-				map,
-				startLocation;
+ locate,
+ map,
+ startLocation;
 				
 
 $(document).ready(function() 
@@ -80,37 +80,39 @@ function snapLocation ()
 }
 
 
-function savePosition(position) 
-{  //take data Put in local json
+function savePosition(position)   //take data Put in local json
+{ 
 	var locationToSave = 
-	{  "time" 			: position.timestamp , 
+	{  
+			"time" 				: position.timestamp , 
 			"latitude"   : position.coords.latitude ,
-			"longitude" : position.coords.longitude };
+			"longitude": position.coords.longitude 
+	};
 			
-			if(startLocation  == "") //first time settup
-			{
-				startLocation = [position.coords.latitude, position.coords.longitude];
-				routeJSON.push(locationToSave);
-			}
-			else
-			{
-				routeJSON.push(locationToSave);
-				drawRoute();
-			}
+	if(startLocation  == "") //first time settup
+	{
+		startLocation = [position.coords.latitude, position.coords.longitude];
+		routeJSON.push(locationToSave);
+	}
+	else
+	{
+		routeJSON.push(locationToSave);
+		drawRoute();
+	}
 }
 
-function drawRoute()
-{  // as we snapshot we draw
+function drawRoute() // as we snapshot we draw
+{  
 	var lastIndex = routeJSON.length - 1
-	map.clearRoute; //wipe
-	map.drawRoute({ 
-		origin: startLocation, 
-		desstination: [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]
+		map.drawRoute //redraw
+		({ 
+			origin: [routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]], 
+			destination: [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]
 		});
 }
 
-function saveRoute() 
-{ // the JSON array will be commited to the database here
+function saveRoute() // the JSON array will be commited to the database here
+{ 
 
 }
  
