@@ -4,8 +4,8 @@
  *  License: http://creativecommons.org/licenses/MIT/	*/
 
 /* Containers */
-body { font-size: 0.875em; padding-top: 10px }
-.grid{  width:440px; padding-top: 10px; }
+body { font-size: 0.875em; padding-top: 10px; }
+.grid{  width:440px; padding: 10px 10px; margin: 0 auto; }
 .row{ clear:left; }
 
 

@@ -68,10 +68,6 @@ li
  background:  #C3C7D1; /* Firefox */
 }
 
-#change {
-	text-align: left;
-}
-
 
 #map{
 	height: 400px;
@@ -119,7 +115,7 @@ li
 }
 
 .info {
-	text-align: left;
+	text-align: centre;
 	font-size: 1.2em;
 	word-wrap: break-word;
 	white-space: normal;
