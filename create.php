@@ -31,6 +31,7 @@
 		})();
 	</script>
 <!--<![endif]-->
+	<script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&.js"></script>
 	<script type="text/javascript" src="https://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
 	<script src="Scripts/locate.js"></script>

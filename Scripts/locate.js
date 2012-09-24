@@ -84,9 +84,9 @@ function savePosition(position)   //take data Put in local json
 { 
 	var locationToSave = 
 	{  
-			"time" 				: position.timestamp , 
-			"latitude"   : position.coords.latitude ,
-			"longitude": position.coords.longitude 
+		"time" : position.timestamp , 
+		"latitude" : position.coords.latitude ,
+		"longitude" : position.coords.longitude 
 	};
 			
 	if(startLocation  == "") //first time settup
@@ -103,12 +103,21 @@ function savePosition(position)   //take data Put in local json
 
 function drawRoute() // as we snapshot we draw
 {  
-	var lastIndex = routeJSON.length - 1
-		map.drawRoute //redraw
+  var lastIndex = routeJSON.length - 1;
+  var distanceLat = routeJSON[lastIndex]["latitude"]  - routeJSON[lastIndex - 1]["latitude"];
+  var distanceLon = routeJSON[lastIndex]["longitude"]  - routeJSON[lastIndex - 1]["longitude"];
+	
+  if(distanceLat > 10 || distanceLong > 10)
+  {
+	  map.drawRoute //redraw
 		({ 
-			origin: [routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]], 
-			destination: [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]
-		});
+		    origin: [routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]], 
+        destination: [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]
+      });
+	}
+	else
+	  routeJSON.pop(lastIndex); // Not enough Distance traveled. 
+	
 }
 
 function saveRoute() // the JSON array will be commited to the database here
@@ -119,4 +128,5 @@ function saveRoute() // the JSON array will be commited to the database here
 function displayError(positionError) 
 { //error handle
   alert("Location failed to snapshot");
+	$("#map").html("<span style='text-align:center'>:( I can't locate you check you have your geolocation enabled!</span>");
 }
