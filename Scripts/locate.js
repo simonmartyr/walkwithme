@@ -12,15 +12,15 @@
  
  /**********Global *******************/
  
- var routeJSON = [],
- locate,
- map,
- startLocation;
+var routeJSON = [];
+var locate;
+var map;
+var startLocation;
 				
 
-$(document).ready(function() 
+$(document).ready(function()  
 {
-	createNew();
+  createNew();
 });
  
  /********** Binds   ****************/
@@ -35,7 +35,6 @@ function createNew() //Clear array start afresh
 	settupLocator();
 	snapLocation();
 	mapSettup();
-
 }
 	
 function mapSettup()
@@ -56,7 +55,6 @@ function mapSettup()
 			lat: startLocation[0],
 			lng: startLocation[1],
 			});
-	
 }
 
 
