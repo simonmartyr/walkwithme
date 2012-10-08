@@ -1,0 +1,155 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html{
+ overflow-y: scroll;
+ font:100%/1.5 Tahoma, Arial, Helvetica, Sans-serif;
+ background-color: rgba(148, 148, 148, 0.597656);
+ background-size: 55px auto !important;
+ background-image: -webkit-linear-gradient(0, transparent 50%, rgba(255, 255, 255, 0.496094) 50%);
+ background-image: -moz-linear-gradient(0, transparent 50%, rgba(255, 255, 255, 0.496094) 50%);
+ background-image: -o-linear-gradient(0, transparent 50%, rgba(255, 255, 255, 0.496094) 50%);
+ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#fafafa');
+ background-image: linear-gradient(0, transparent 50%, rgba(255, 255, 255, 0.496094) 50%);
+}
+body
+{
+ margin:0 auto;
+ text-align: center;
+}
+
+@font-face 
+{				
+ font-family: 'hab';
+    src: url('featureditem-webfont.eot');
+    src: url('featureditem-webfont.eot?#iefix') format('embedded-opentype'),
+         url('featureditem-webfont.woff') format('woff'),
+         url('featureditem-webfont.ttf') format('truetype'),
+         url('featureditem-webfont.svg#FeaturedItemRegular') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+a{
+text-decoration:none;
+color: black;
+}
+li
+{
+ list-style-type: none; 
+}
+
+::selection {
+ background:  #C3C7D1; /* Safari */
+}
+
+::-moz-selection {
+ background:  #C3C7D1; /* Firefox */
+}
+
+
+#map{
+	height: 400px;
+	}
+
+
+.title {
+ text-align: centre;
+ font: 6em hab;
+}
+
+
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fafafa), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #fafafa 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#dfdfdf');
+	background-color:#fafafa;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#000000;
+	font-family:arial;
+	font-size:30px;
+	font-weight:bold;
+	padding:7px 10px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}
+.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #fafafa) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #fafafa 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#fafafa');
+	background-color:#dfdfdf;
+	cursor: pointer;
+}
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.info {
+	text-align: centre;
+	font-size: 1.2em;
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+.shadow {
+	border-radius: 20px;
+	box-shadow: 3px 3px 5px 6px rgba(190, 190, 190, 0.58);
+}
+
+.route {
+	 text-align: centre;
+}
+
+.existing{
+	float:right;
+	margin-right: 5%;
+}
+
+.grid {
+	padding: 0 20px;
+	background-color: #E0E0E0;
+}
+
+.create{
+	float:left;
+}
+
+.clear{
+	clear:both;
+}
+
+.row {
+	width: 100%;
+	display:inline-block;
+	white-space:nowrap;
+}

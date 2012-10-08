@@ -10,12 +10,10 @@
  
  /**********Global *******************/
  
- var routeJSON = [];
- var repeater;
- var repeaterTime = 30; // in seconds
- var locate;
- var map;
- var startLocation;
+ var routeJSON = [],
+ locate,
+ map,
+ startLocation;
 				
 
 $(document).ready(function() 
@@ -55,16 +53,6 @@ function mapSettup() //settup Gmaps within the correct div - start co-ods
   map.setZoom(17); // default 15 
 }
 
-function toggle ()
-{
-  if ($(".toggle").text() == "start"){
-	  $(".toggle").text("save"); 
-	  snapRepeater();
-	}
-	else{
-	  saveRoute();
-	}
-}
 
 function settupLocator () //check if geolocation enabled or use google. 
 {
@@ -78,12 +66,6 @@ function settupLocator () //check if geolocation enabled or use google.
   catch(e) {}
   if (!locate) 
   alert("Geolocation services are not supported by your web browser.");	
-}
-
-function snapRepeater (repeaterTime) //start has been pressed
-{
-	snapLocation ();
-  repeater = setTimeout('snapRepeater()' , 2000);
 }
  
 function snapLocation () //take the snapshot insert into array
@@ -123,8 +105,7 @@ function drawRoute() // as we snapshot we draw
 
 function saveRoute() // the JSON array will be commited to the database here
 { 
-  clearTimeout(repeater);
-	$(".toggle").text("start");
+
 }
  
 function displayError(positionError) 
