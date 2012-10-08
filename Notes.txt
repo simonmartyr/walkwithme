@@ -1,0 +1,33 @@
+
+On ready - Settup
+
+need binds
+
+CreateNew () - fresh start
+
+mapSettup () - create the map within the div
+
+settupLocator - device gps etc
+
+snapLocation - take snapshot
+
+save position - take data put in local json 
+
+drawRoute - draw on map
+
+saveRoute - send to webserver to save
+
+displayError - What went wrong. 
+
+
+
+if(navigator.platform == 'iPad' || navigator.platform == 'iPhone') {
+			document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"><\/script>\
+							<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"><\/script> ');
+		}
+		else {
+			document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"><\/script>');
+		}
+		
+<!--[if !IE]><!-->
+<!--<![endif]-->
