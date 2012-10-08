@@ -106,6 +106,7 @@ function savePosition(position)   //take data Put in local json
   }
   else
   {
+	  map.setCenter(position.coords.latitude, position.coords.longitude)
     routeJSON.push(locationToSave);
     drawRoute();
   }
@@ -114,11 +115,15 @@ function savePosition(position)   //take data Put in local json
 function drawRoute() // as we snapshot we draw
 {
   var lastIndex = routeJSON.length - 1;
-  map.drawRoute //redraw
+	var path = [[routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]] , [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]];
+  map.drawPolyline //redraw
   ({ 
-    origin: [routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]], 
-	destination: [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]
+    path: path ,
+		strokeColor: '#131540',
+    strokeOpacity: 0.6,
+    strokeWeight: 6
 	});
+	
 }
 
 function saveRoute() // the JSON array will be commited to the database here
