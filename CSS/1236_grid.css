@@ -25,5 +25,4 @@ body { font-size: 1.125em; padding: 15px 10px;}
 .button { font-size: 50px; }
 .create a:before{ content: "Create a new route";}
 .existing a:before{ content: "Use an Existing ";}
-.save,  .snap{ font-size: 35px; }
 #map{ height: 400px; width: auto;}

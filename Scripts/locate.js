@@ -45,6 +45,7 @@ function mapSettup() //settup Gmaps within the correct div - start co-ods
   }
   map = new GMaps({
     div: '#map',
+	disableDefaultUI: true,
     lat: startLocation[0],
     lng: startLocation[1],
     });
