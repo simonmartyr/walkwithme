@@ -140,6 +140,24 @@ li
 	margin-right: 5%;
 }
 
+.overlay{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+}
+
+.settings{
+  border-radius: 20px;
+  margin-top: 20% !important;
+  height: 35%;
+  background: white !important;
+}
+
 .grid {
 	padding: 0 20px;
 	background-color: #E0E0E0;

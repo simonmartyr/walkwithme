@@ -16,18 +16,23 @@
  var locate;
  var map;
  var startLocation;
-				
 
+ /**********Binds******************/
+ 
+ $(document).on("click", ".settingsButton", function() 
+ {
+     $(".overlay").css("visibility", "visible");
+ });
+
+ 
+ /**********Ready*******************/
+ 
 $(document).ready(function() 
 {
 	createNew();
 });
  
- /********** Binds   ****************/
-//$(document).on("click","#make",createNew()); //create route
-//$(document).on("click","#snap",snapLocation());  //snapshot to current route
-//$(document).on("click","#save",saveRoute());	//save current route
-
+ /**********Functions*******************/
 function createNew() //Clear array start afresh
 { 
   routeJSON = [];
@@ -83,7 +88,7 @@ function settupLocator () //check if geolocation enabled or use google.
 
 function snapRepeater (repeaterTime) //start has been pressed
 {
-	snapLocation ();
+  snapLocation ();
   repeater = setTimeout('snapRepeater()' , 2000);
 }
  
@@ -107,30 +112,29 @@ function savePosition(position)   //take data Put in local json
   }
   else
   {
-	  map.setCenter(position.coords.latitude, position.coords.longitude)
-    routeJSON.push(locationToSave);
-    drawRoute();
+     map.setCenter(position.coords.latitude, position.coords.longitude)
+     routeJSON.push(locationToSave);
+     drawRoute();
   }
 }
 
 function drawRoute() // as we snapshot we draw
 {
-  var lastIndex = routeJSON.length - 1;
+    var lastIndex = routeJSON.length - 1;
 	var path = [[routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]] , [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]];
-  map.drawPolyline //redraw
-  ({ 
-    path: path ,
-		strokeColor: '#131540',
-    strokeOpacity: 0.6,
-    strokeWeight: 6
+    map.drawPolyline //redraw
+    ({ 
+        path: path ,
+	    strokeColor: '#131540',
+        strokeOpacity: 0.6,
+        strokeWeight: 6
 	});
-	
 }
 
 function saveRoute() // the JSON array will be commited to the database here
 { 
   clearTimeout(repeater);
-	$(".toggle").text("start");
+  $(".toggle").text("start");
 }
  
 function displayError(positionError) 
