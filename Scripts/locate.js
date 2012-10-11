@@ -19,7 +19,7 @@
 
  /**********Binds******************/
  
- $(document).on("click", ".settingsButton", function() 
+ $(document).on("click", ".settingsButton[type='settings']", function() 
  {
      $(".overlay").css("visibility", "visible");
 		 startSettings();

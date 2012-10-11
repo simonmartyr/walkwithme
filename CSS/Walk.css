@@ -83,7 +83,7 @@ li
 }
 
 
-.button {
+.button2 {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -104,11 +104,28 @@ li
 	text-decoration:none;
 	text-shadow:1px 1px 0px #ffffff;
 }
+
+.button {
+  background: #222 url(../Images/button.png) repeat-x;
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+  font-family: Arial, Helvetica, 'Helvetica Neue', Verdana, sans-serif;
+}
+
 .button:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #fafafa) );
-	background:-moz-linear-gradient( center top, #dfdfdf 5%, #fafafa 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#fafafa');
-	background-color:#dfdfdf;
+	background-color: #111;
 	cursor: pointer;
 }
 
@@ -118,8 +135,33 @@ li
 }
 
 .settingsButton {
-  padding: 0px !important;
-  font-size: 0px !important;
+  background: #E1E9DD url(../Images/button.png) repeat-x ;
+  padding: 0px ;
+  font-size: 0px ;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+  font-family: Arial, Helvetica, 'Helvetica Neue', Verdana, sans-serif;
+}
+
+.settingsButton:hover {
+	background-color: #FFF;
+	cursor: pointer;
+}
+
+.settingsButton:active {
+	position:relative;
+	top:1px;
 }
 
 .info {
