@@ -22,6 +22,7 @@
  $(document).on("click", ".settingsButton", function() 
  {
      $(".overlay").css("visibility", "visible");
+		 startSettings();
  });
 
  

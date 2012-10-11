@@ -14,3 +14,11 @@
 	  restart
  */
  
+ function startSettings() {
+   $.ajax({
+		url: "Widgets/settings.html",
+		success: function(data){
+		  $("#message").html("hi");
+		}
+		});
+ }
