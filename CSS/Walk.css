@@ -69,10 +69,13 @@ li
 }
 
 
-#map{
+#map {
 	height: 400px;
-	}
+}
 
+.settingsInputs {
+  width: 95%;
+}
 
 .title {
  text-align: centre;

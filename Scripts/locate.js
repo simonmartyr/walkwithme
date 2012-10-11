@@ -64,8 +64,8 @@ function mapSettup() //settup Gmaps within the correct div - start co-ods
 
 function toggle ()
 {
-  if ($(".toggle").text() == "start"){
-	  $(".toggle").text("save"); 
+  if ($(".toggle").text() == "Start"){
+	  $(".toggle").text("Save"); 
 	  snapRepeater();
 	}
 	else{
@@ -135,7 +135,7 @@ function drawRoute() // as we snapshot we draw
 function saveRoute() // the JSON array will be commited to the database here
 { 
   clearTimeout(repeater);
-  $(".toggle").text("start");
+  $(".toggle").text("Start");
 }
  
 function displayError(positionError) 

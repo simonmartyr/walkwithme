@@ -16,9 +16,9 @@
  
  function startSettings() {
    $.ajax({
-		url: "Widgets/settings.html",
+		url: "widgets/settings.html",
 		success: function(data){
-		  $("#message").html("hi");
+		  $("#message").html(data);
 		}
 		});
  }
