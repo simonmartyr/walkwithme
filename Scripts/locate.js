@@ -24,6 +24,13 @@
      $(".overlay").css("visibility", "visible");
 		 startSettings();
  });
+ 
+  $(document).on("click", ".settingsButton[type='close']", function() 
+ {
+     $("#message").html("");
+     $(".overlay").css("visibility", "hidden");
+		 startSettings();
+ });
 
  
  /**********Ready*******************/

@@ -60,6 +60,18 @@ li
  list-style-type: none; 
 }
 
+p{
+ text-align: left;
+}
+
+h1 {
+  font-size : 2em;
+}
+h2 {
+  font-size: 1em;
+  text-align:left;
+}
+
 ::selection {
  background:  #C3C7D1; /* Safari */
 }
@@ -200,7 +212,6 @@ li
   border-radius: 20px;
   margin-top: 20% !important;
   height: 35%;
-  background: white !important;
 }
 
 .grid {
@@ -221,3 +232,5 @@ li
 	display:inline-block;
 	white-space:nowrap;
 }
+
+

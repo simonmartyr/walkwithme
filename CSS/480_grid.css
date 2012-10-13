@@ -5,7 +5,7 @@
 
 /* Containers */
 body { font-size: 0.875em; padding: 15px 0px; }
-.grid{  width:440px; padding: 10px 10px; margin: 0 auto; }
+.grid{  width:460px; padding: 10px 10px; margin: 0 auto; }
 .row{ clear:left; }
 
 
@@ -19,11 +19,11 @@ body { font-size: 0.875em; padding: 15px 0px; }
 .slot-0-1-2-3-4,.slot-1-2-3-4-5{ width:360px; } /* Five-Sixths */
 
 /* 4-Col Grid Sizes */
-.slot-6,.slot-7,.slot-8,.slot-9{ width:113px; } /* Quarters */
-.slot-6-7-8,.slot-7-8-9{ width:338px; } /* Three-Quarters */
+.slot-6,.slot-7,.slot-8,.slot-9{ width:100px; } /* Quarters */
+.slot-6-7-8,.slot-7-8-9{ width:300px; } /* Three-Quarters */
 
 /* 6-Col/4-Col Shared Grid Sizes */
-.slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width:205px; } /* Halves */
+.slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width:200px; } /* Halves */
 .slot-0-1-2-3-4-5, .slot-6-7-8-9{ width: 100%; } /* Full-Width */
 
 /* Zeroing Out Leftmost Slot Margins */
@@ -35,8 +35,9 @@ body { font-size: 0.875em; padding: 15px 0px; }
 
 /*extra*/
 #map{ height: 220px; }
+.buttonImg{height: 22px;}
 .logo { width: 20%; }
-.title { font: 3em hab;}
-.button { font-size: 35px ; }
+.title { font: 2em hab;}
+.button { font-size: 22px ; }
 .create a:before{ content: "Create";}
 .existing a:before{ content: "Existing ";}

@@ -5,7 +5,7 @@
 
 /* Containers */
 body { font-size: 0.875em; padding: 15px 0px;}
-.grid{  width:280px; padding: 10px 10px; margin: 0 auto;  }
+.grid{  width:300px; padding: 10px 10px; margin: 0 auto;  }
 .row{ clear:left; }
 
 
@@ -34,9 +34,10 @@ body { font-size: 0.875em; padding: 15px 0px;}
 .row{ zoom:1; }
 
 /*extra*/
-#map{ height: 320px; }
+#map{ height: 250px; }
+.buttonImg{height: 22px;}
 .logo { width: 20%; }
-.title { font: 3em hab;}
+.title { font: 2em hab;}
 .button { font-size: 22px; }
 .create a:before{ content: "Create";}
 .existing a:before{ content: "Existing ";}
