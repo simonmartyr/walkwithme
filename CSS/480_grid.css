@@ -35,6 +35,7 @@ body { font-size: 0.875em; padding: 15px 0px; }
 
 /*extra*/
 #map{ height: 220px; }
+.settings{ margin-left: -240px !important;}
 .buttonImg{height: 22px;}
 .logo { width: 20%; }
 .title { font: 2em hab;}

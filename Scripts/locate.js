@@ -22,13 +22,15 @@
  $(document).on("click", ".settingsButton[type='settings']", function() 
  {
      $(".overlay").css("visibility", "visible");
+		 $(".settings").css("visibility", "visible");
 		 startSettings();
  });
  
-  $(document).on("click", ".settingsButton[type='close']", function() 
+  $(document).on("click", ".settingsButton[type='close'], .overlay", function() 
  {
      $("#message").html("");
      $(".overlay").css("visibility", "hidden");
+		 $(".settings").css("visibility", "hidden");
 		 startSettings();
  });
 

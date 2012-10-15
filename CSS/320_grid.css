@@ -35,9 +35,12 @@ body { font-size: 0.875em; padding: 15px 0px;}
 
 /*extra*/
 #map{ height: 250px; }
+.settings{ margin-left: -160px !important;}
 .buttonImg{height: 22px;}
 .logo { width: 20%; }
 .title { font: 2em hab;}
 .button { font-size: 22px; }
 .create a:before{ content: "Create";}
 .existing a:before{ content: "Existing ";}
+
+

@@ -35,6 +35,7 @@ body { font-size: 0.875em; padding: 15px 10px; }
 
 /*extra*/
 .logo { width: 20%; }
+.settings{ margin-left: -360px !important;}
 .buttonImg{height: 35px;}
 .title { font: 4em hab;}
 .button { font-size: 35px ; }

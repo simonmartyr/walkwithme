@@ -198,12 +198,12 @@ h2 {
 }
 
 .overlay{
-    position: absolute;
+    position: fixed;
     left: 0px;
     top: 0px;
     right: 0px;
     bottom: 0px;
-    z-index: 1000;
+    z-index: 10;
     background-color: rgba(0, 0, 0, 0.7);
     visibility: hidden;
 }
@@ -211,7 +211,11 @@ h2 {
 .settings{
   border-radius: 20px;
   margin-top: 20% !important;
-  height: 35%;
+	position: absolute;
+	top: 0;
+	z-index: 20;
+	visibility: hidden;
+	left: 50% !important;
 }
 
 .grid {
