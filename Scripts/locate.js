@@ -12,7 +12,7 @@
  
  var routeJSON = [];
  var repeater;
- var repeaterTime = 30; // in seconds
+ var repeaterTime = 50; // in seconds
  var locate;
  var map;
  var startLocation;
@@ -99,7 +99,7 @@ function settupLocator () //check if geolocation enabled or use google.
 function snapRepeater (repeaterTime) //start has been pressed
 {
   snapLocation ();
-  repeater = setTimeout('snapRepeater()' , 2000);
+  repeater = setTimeout('snapRepeater()' , (repeaterTime * 1000));
 }
  
 function snapLocation () //take the snapshot insert into array
