@@ -23,7 +23,7 @@ body { font-size: 0.875em; padding: 15px 0px; }
 .slot-6-7-8,.slot-7-8-9{ width:300px; } /* Three-Quarters */
 
 /* 6-Col/4-Col Shared Grid Sizes */
-.slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width:200px; } /* Halves */
+.slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width:220px; } /* Halves */
 .slot-0-1-2-3-4-5, .slot-6-7-8-9{ width: 100%; } /* Full-Width */
 
 /* Zeroing Out Leftmost Slot Margins */

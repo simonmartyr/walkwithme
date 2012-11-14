@@ -186,7 +186,12 @@ h2 {
 
 .existing{
 	float:right;
-	margin-right: 5%;
+	text-align: right;
+}
+
+.create{
+	float:left;
+	text-align: left;
 }
 
 .overlay{
@@ -213,10 +218,6 @@ h2 {
 .grid {
 	padding: 0 20px;
 	background-color: rgba(224, 224, 224, 0.58);
-}
-
-.create{
-	float:left;
 }
 
 .clear{
