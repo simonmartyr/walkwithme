@@ -136,6 +136,8 @@ h2 {
 .button:active {
 	position:relative;
 	top:1px;
+	background-color: white;
+	color: #111;
 }
 
 .settingsButton {
