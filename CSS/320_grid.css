@@ -14,7 +14,7 @@ body { font-size: 0.875em; padding: 15px 0px;}
 
 /* 6-Col Grid Sizes */
 .slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5{ width:28px; } /* Sixths */
-.slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width:80px; } /* Thirds */
+.slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width:86px; } /* Thirds */
 .slot-0-1-2-3,.slot-1-2-3-4,.slot-2-3-4-5{ width:180px; } /* Two-Thirds */
 .slot-0-1-2-3-4,.slot-1-2-3-4-5{ width:220px; } /* Five-Sixths */
 
@@ -36,7 +36,6 @@ body { font-size: 0.875em; padding: 15px 0px;}
 /*extra*/
 #map{ height: 250px; }
 .settings{ margin-left: -160px !important;}
-.buttonImg{height: 22px;}
 .logo { width: 20%; }
 .title { font: 2em hab;}
 .button { font-size: 22px; }

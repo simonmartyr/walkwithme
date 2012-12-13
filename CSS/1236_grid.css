@@ -9,7 +9,7 @@ body { font-size: 1.125em; padding: 15px 10px;}
 
 /* 6-Col Grid Sizes */
 .slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5{ width:176px; } /* Sixths */
-.slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width:382px; } /* Thirds */
+.slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width:388px; } /* Thirds */
 .slot-0-1-2-3,.slot-1-2-3-4,.slot-2-3-4-5{ width:794px; } /* Two-Thirds */
 .slot-0-1-2-3-4,.slot-1-2-3-4-5{ width:1000px; } /* Five-Sixths */
 
@@ -22,7 +22,6 @@ body { font-size: 1.125em; padding: 15px 10px;}
 
 .logo { width: 20%; }
 .settings{ margin-left: -613px !important;}
-.buttonImg{height: 35px;}
 .title { font: 6em hab;}
 .button { font-size: 50px; }
 .create a:before{ content: "Create a new route";}

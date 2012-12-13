@@ -19,19 +19,25 @@
 
  /**********Binds******************/
  
- $(document).on("click", ".settingsButton[type='settings']", function() 
+ $(document).on("click tap", ".settingsButton[type='settings']", function(e) 
  {
-     $(".overlay").css("visibility", "visible");
-		 $(".settings").css("visibility", "visible");
-		 startSettings();
+     $(".overlay").fadeIn(300, function() {
+			 $(".overlay").css("visibility", "visible");
+			 $(".settings").css("visibility", "visible");
+			 startSettings();
+			})
+			e.preventDefault();
  });
  
-  $(document).on("click", ".settingsButton[type='close'], .overlay", function() 
- {
-     $("#message").html("");
-     $(".overlay").css("visibility", "hidden");
-		 $(".settings").css("visibility", "hidden");
-		 startSettings();
+  $(document).on("click tap", " .settingsButton[type='close'] ", function(e) 
+	{   
+	  $(".overlay").fadeOut(200, function() {
+			  $("#message").html("");
+			  $(".overlay").css("visibility", "hidden");
+			  $(".settings").css("visibility", "hidden");
+			  startSettings();
+			})
+			e.preventDefault();
  });
 
  
