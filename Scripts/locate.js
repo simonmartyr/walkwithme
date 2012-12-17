@@ -29,7 +29,7 @@
 			e.preventDefault();
  });
  
-  $(document).on("click tap", " .settingsButton[type='close'] ", function(e) 
+  $(document).on("click tap", ".overlay , .settingsButton[type='close'] ", function(e) 
 	{   
 	  $(".overlay").fadeOut(200, function() {
 			  $("#message").html("");
