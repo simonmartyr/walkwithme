@@ -57,8 +57,10 @@ li
 }
 
 h1 {
-  font-size : 2em;
+   text-align: centre;
+   font: 6em hab;
 }
+
 h2 {
   font-size: 1em;
   text-align:left;
@@ -81,10 +83,6 @@ h2 {
   width: 95%;
 }
 
-.title {
- text-align: centre;
- font: 6em hab;
-}
 
 
 .button2 {
@@ -246,6 +244,10 @@ text-align: right;
 	width: 100%;
 	display:inline-block;
 	white-space:nowrap;
+}
+
+ #message {
+  background-color:  rgba(224, 224, 224, 1) ;
 }
 
 

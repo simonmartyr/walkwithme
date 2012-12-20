@@ -22,7 +22,7 @@ body { font-size: 1.125em; padding: 15px 10px;}
 
 .logo { width: 20%; }
 .settings{ margin-left: -613px !important;}
-.title { font: 6em hab;}
+h1{ font: 6em hab;}
 .button { font-size: 50px; }
 .create a:before{ content: "Create a new route";}
 .existing a:before{ content: "Use an Existing ";}

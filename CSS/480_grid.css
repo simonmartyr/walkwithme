@@ -37,7 +37,7 @@ body { font-size: 0.875em; padding: 15px 0px; }
 #map{ height: 220px; }
 .settings{ margin-left: -240px !important;}
 .logo { width: 20%; }
-.title { font: 2em hab;}
+h1{ font: 2em hab;}
 .button { font-size: 22px ; }
 .create a:before{ content: "Create";}
 .existing a:before{ content: "Existing ";}
