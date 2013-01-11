@@ -1,0 +1,21 @@
+Current System and Enviroment - 
+ Stakeholders
+ Current Enviroment 
+ Model the process - Role activity (UML) 
+
+Discover Each stakeHolder - new system  
+ Interview
+ Questionaire - :s
+ Scenarios
+ Soft System methods
+ Obersvation and social analysis 
+ Prototyping
+
+What is required in the new system??
+
+ Analyse and categorise stakeholders 
+ review the process model - describing existing way of work
+ review own knowledge
+ design new way of working
+ review how one or more new systems will support the work in the new process
+ negoitate an acceptable proces model
