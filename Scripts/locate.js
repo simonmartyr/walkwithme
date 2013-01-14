@@ -110,8 +110,13 @@ function snapRepeater (repeaterTime) //start has been pressed
  
 function snapLocation () //take the snapshot insert into array
 { 
-  locate.getCurrentPosition(savePosition, displayError);			
+  locate.watchPosition(savePosition,  displayError, {timeout:1000});			
 }
+
+// function snapLocation () //take the snapshot insert into array
+// { 
+  // locate.getCurrentPosition(savePosition,  displayError);			
+// }
 
 function savePosition(position)   //take data Put in local json
 { 

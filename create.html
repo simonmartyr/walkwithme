@@ -25,7 +25,9 @@
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&.js"></script>
 	<script type="text/javascript" src="Scripts/gmaps.js"></script>
 	<script src="Scripts/settings.js"></script>
-	<script src="Scripts/locate.js"></script>
+	<script src="Scripts/locator.js"></script>
+	<script src="Scripts/map.js"></script>
+	<script src="Scripts/main.js"></script>
 	<link href="CSS/Walk.css" rel="stylesheet" type="text/css"> 
 	<link href="CSS/320_grid.css" media="screen and (min-width: 320px)" rel="stylesheet" type="text/css"> 
 	<link href="CSS/320_grid.css" media="screen and (max-width: 320px)" rel="stylesheet" type="text/css"> 
@@ -54,7 +56,7 @@
       <div class="slot-0-1-2-3-4-5">
         <div class="row">
           <div  class="slot-0-1-2-3-4-5">
-            <div id = "map"></div>
+            <div id = "map"></br></br></br><img src="Images/loading.gif"/></br></br>Just finding you...</div>
           </div>
         </div>
       </div>	
@@ -62,14 +64,14 @@
     <div class="row">
       <div class="slot-0-1-2">
         <div class="row">
-          <div class="slot-0-1-2">
+          <div class="slot-0-1-2" style="text-align: left;">
             <a class="button toggle" onclick="toggle ()">Start</a>
           </div>
         </div>
       </div>
       <div class="slot-3-4-5">
         <div class="row">
-          <div class="slot-3-4-5">
+          <div class="slot-3-4-5" style="text-align: right">
             <a class="button snap" onclick="snapLocation ()">Admire <span class="icon-target"></span></a>
           </div>
         </div>
