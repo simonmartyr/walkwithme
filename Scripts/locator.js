@@ -13,6 +13,7 @@ var Locator = (function(){
       this.settupTracker();
 	};
 	
+	
 	Locator.prototype.settupTracker = function() {
 	  tracker = navigator.geolocation;	
 		// try 
@@ -34,7 +35,6 @@ var Locator = (function(){
 
 	    tracker.getCurrentPosition(function(position){
 		   snappy = [position.coords.latitude, position.coords.longitude];
-		   this.savePosition(position);
 		});
 
 	};
@@ -54,7 +54,7 @@ var Locator = (function(){
 
 	Locator.prototype.watchLocation = function () //will capture the users movement
 	{ 
-	    watchId = tracker.watchPosition(this.savePosition,  this.displayError, {enableHighAccuracy:true, timeout:1000, frequency: 3000, maximumAge:30000 });			
+	    watchId = tracker.watchPosition(this.savePosition,  this.displayError, {enableHighAccuracy:true, timeout:10000, frequency: 15000, maximumAge:30000 });			
 	};
 	
 	Locator.prototype.clearWatch = function() //stop the watch location. 
@@ -67,24 +67,26 @@ var Locator = (function(){
 	
 	Locator.prototype.savePosition = function (position )   //data from geolocation saved
 	{ 
-	  var locationToSave = 
-	  {  
-		"time"             : position.timestamp , 
-		"latitude"      : position.coords.latitude ,
-		"longitude"  : position.coords.longitude ,
-		"heading"     : position.coords.heading,
-		"speed"          : position.coords.speed
-	  };		
-	   routeJSON.push(locationToSave);
-		
-		 map.center(position.coords.latitude, position.coords.longitude);
-		 var lastIndex = routeJSON.length - 1;
-		 if(lastIndex == 0){
-		  return;
-		 }
-		 var path = [[routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]] , [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]];
-		 map.route(path);
-		
+	  if(position.coords.accuracy >= 200){
+			var locationToSave = 
+			{  
+			"time"             : position.timestamp , 
+			"latitude"      : position.coords.latitude ,
+			"longitude"  : position.coords.longitude ,
+			"heading"     : position.coords.heading,
+			"speed"          : position.coords.speed
+			};		
+			 routeJSON.push(locationToSave);
+			
+			 map.center(position.coords.latitude, position.coords.longitude);
+			 var lastIndex = routeJSON.length - 1;
+			 if(lastIndex == 0){
+				return;
+			 }
+			 var path = [[routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]] , [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]];
+			 map.route(path);
+		}
+		console.log("poor signal");
 	};
 	
 	

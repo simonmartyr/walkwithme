@@ -40,6 +40,11 @@ function Map(tracker) //settup Gmaps within the correct div - start co-ods
    mapOptions.setCenter(lat, lon);
  };
 
+ Map.prototype.sizeChange= function()
+ {
+   mapOptions.refresh();
+ };
+ 
 return Map;
 
 }) ();
