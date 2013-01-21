@@ -5,6 +5,17 @@ var start;
  /**********Ready*******************/
  $(document).ready(function()
  {
+		var fbURL = "http://icannotdesign.com/test.php"
+
+		$.ajax({
+				url: fbURL,
+				success: function (resp) {
+						alert(resp);
+				},
+				error: function(e) {
+						alert('Error: '+e);
+				}  
+		});
 
  });
  
