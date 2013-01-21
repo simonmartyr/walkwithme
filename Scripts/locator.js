@@ -67,7 +67,7 @@ var Locator = (function(){
 	
 	Locator.prototype.savePosition = function (position )   //data from geolocation saved
 	{ 
-	  if(position.coords.accuracy >= 200){
+	  if(position.coords.accuracy  <= 150){
 			var locationToSave = 
 			{  
 			"time"             : position.timestamp , 

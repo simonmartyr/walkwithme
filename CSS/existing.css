@@ -1,0 +1,12 @@
+
+.menu ul{
+	display:block;
+	background:#E1E9DD url(../Images/button.png) repeat-x;
+	border:1px solid #adadad;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.menu ul li{padding:10px 15px;border-top:1px solid #adadad;}
+.menu ul li:first-child{border:0;}
+.menu ul li span{color:black;float:right;font-weight:bold;}
