@@ -6,6 +6,7 @@ var Locator = (function(){
   var startLocation="";
   var snappy="";
   var watchId = null;  //contain the watch data inorder to stop. 
+	var distance = 0;
    
    //constructor 
 	function Locator() //check if geolocation enabled or use google. 
@@ -67,7 +68,7 @@ var Locator = (function(){
 	
 	Locator.prototype.savePosition = function (position )   //data from geolocation saved
 	{ 
-	  if(position.coords.accuracy  <= 150){
+	  if(position.coords.accuracy <= 200){
 			var locationToSave = 
 			{  
 			"time"             : position.timestamp , 
@@ -85,8 +86,26 @@ var Locator = (function(){
 			 }
 			 var path = [[routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]] , [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]];
 			 map.route(path);
+			 
+			 var R = 3958.7558657440545; // Radius of earth in Miles 
+			 var dLat = toRad(path[1][0]-path[0][0]);
+			 var dLon = toRad(path[1][1]-path[0][1]); 
+			 var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+								Math.cos(toRad(path[0][0])) * Math.cos(toRad(path[1][0])) * 
+								Math.sin(dLon/2) * Math.sin(dLon/2); 
+			 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+			 var d = R * c;
+			 distance = distance + d;
+			 console.log(distance);
+
+		   function toRad(Value) {
+			/** Converts numeric degrees to radians */
+			return Value * Math.PI / 180;
+		  }	
 		}
-		console.log("poor signal");
+		else{
+			console.log("poor signal");
+		}
 	};
 	
 	
@@ -96,5 +115,12 @@ var Locator = (function(){
 		alert("GPS related error.");
 	};
 	
+	Locator.prototype.distance = function(first, second)
+	{
+	
+    //Radius of the earth in:  1.609344 miles,  6371 km  | var R = (6371 / 1.609344);
+    
+	}
+
 	return Locator;
 }) ();

@@ -146,7 +146,7 @@ function drawRoute() // as we snapshot we draw
     map.drawPolyline //redraw
     ({ 
         path: path ,
-	    strokeColor: '#131540',
+	      strokeColor: '#131540',
         strokeOpacity: 0.6,
         strokeWeight: 6
 	});
