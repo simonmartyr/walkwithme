@@ -38,6 +38,7 @@ body { font-size: 0.875em; padding: 15px 0px;}
 .settings{ margin-left: -160px !important;}
 .logo { width: 20%; }
 h1{ font: 2em hab;}
+h3{ font-size: 20px; }
 .button { font-size: 22px; }
 .create a:before{ content: "Create";}
 .existing a:before{ content: "Existing ";}

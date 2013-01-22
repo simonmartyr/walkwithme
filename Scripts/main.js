@@ -48,7 +48,7 @@
 				'z-index': 1000
 				});
 				
-			$(".settingsButton[type='fullscreen']").addAttr('full', 1);
+			$(".settingsButton[type='fullscreen']").attr('full', 1);
 				
 			$("#map , #change").animate({height: '100%', width: '100%'}, 500, function(){
 		    map.sizeChange();

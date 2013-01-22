@@ -66,6 +66,11 @@ h2 {
   text-align:left;
 }
 
+h3 {
+  font-family: Arial, Helvetica, 'Helvetica Neue', Verdana, sans-serif;
+	font-weight: bold;
+}
+
 ::selection {
  background:  #C3C7D1; /* Safari */
 }
@@ -223,7 +228,7 @@ text-align: right;
 
 .settings{
   border-radius: 20px;
-  margin-top: 20% !important;
+  margin-top: 10% !important;
 	position: absolute;
 	top: 0;
 	z-index: 20;

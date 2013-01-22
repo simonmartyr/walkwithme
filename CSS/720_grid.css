@@ -37,6 +37,7 @@ body { font-size: 0.875em; padding: 15px 10px; }
 .logo { width: 20%; }
 .settings{ margin-left: -360px !important;}
 h1{ font: 4em hab;}
+h3{ font-size: 35px ; }
 .button { font-size: 35px ; }
 .create a:before{ content: "Create a route";}
 .existing a:before{ content: "Use an Existing ";}
