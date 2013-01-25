@@ -5,4 +5,9 @@ function startSave() {
 		  $("#message").html(data);
 		}
 		});
+		
  }
+ 
+function save(type) {
+	$("#saveChange").css("visibility", "visible").html("<input type='text' name='"+ type + "'>").focus();
+} 
