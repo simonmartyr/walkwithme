@@ -11,11 +11,11 @@ var Locator = (function(){
    //constructor 
 	function Locator() //check if geolocation enabled or use google. 
 	{
-      this.settupTracker();
+      settupTracker();
 	};
 	
 	
-	Locator.prototype.settupTracker = function() {
+	function settupTracker () {
 	  tracker = navigator.geolocation;	
 		// try 
 	  // {
@@ -33,7 +33,6 @@ var Locator = (function(){
 
 	Locator.prototype.snapLocation = function () //one time snap shot of location
 	{ 
-
 	    tracker.getCurrentPosition(function(position){
 		   snappy = [position.coords.latitude, position.coords.longitude];
 		});
@@ -87,27 +86,32 @@ var Locator = (function(){
 			 var path = [[routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]] , [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]];
 			 map.route(path);
 			 
-			 var R = 3958.7558657440545; // Radius of earth in Miles 
-			 var dLat = toRad(path[1][0]-path[0][0]);
-			 var dLon = toRad(path[1][1]-path[0][1]); 
-			 var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-								Math.cos(toRad(path[0][0])) * Math.cos(toRad(path[1][0])) * 
-								Math.sin(dLon/2) * Math.sin(dLon/2); 
-			 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-			 var d = R * c;
-			 distance = distance + d;
-			 console.log(distance);
+			 distance(path);
 
-		   function toRad(Value) {
-			/** Converts numeric degrees to radians */
-			return Value * Math.PI / 180;
-		  }	
+		   
 		}
 		else{
 			console.log("poor signal");
 		}
 	};
 	
+	function distance(path){ //constant calc of after each successful snapshots
+		var R = 3958.7558657440545; // Radius of earth in Miles 
+		var dLat = toRad(path[1][0]-path[0][0]);
+		var dLon = toRad(path[1][1]-path[0][1]); 
+		var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+							Math.cos(toRad(path[0][0])) * Math.cos(toRad(path[1][0])) * 
+							Math.sin(dLon/2) * Math.sin(dLon/2); 
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		var d = R * c;
+		distance = distance + d;
+		console.log(distance);
+			 
+		function toRad(Value) {
+			/** Converts numeric degrees to radians */
+			return Value * Math.PI / 180;
+		 }	
+	}
 	
 	
 	Locator.prototype.displayError = function(positionError) 

@@ -1,17 +1,19 @@
 /**********Globals*******************/
-	var locator, map;
+	var locator = new Locator();
+	var map;
 	var start;
-
+	
+    var myDataReference = new Firebase('https://walkwithme.firebaseio.com/');
  /**********Ready*******************/
   $(document).ready(function()
   {
 		
+   
 
   });
  
 	$(window).load(function() 
-	{
-		locator = new Locator();
+	{	
 		createNew() ;
 	});
  
