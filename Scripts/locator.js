@@ -43,6 +43,21 @@ var Locator = (function(){
 	   return startLocation; 
 	};
 	
+	Locator.prototype.getDistance = function()
+	{
+	   if(distance == 0) {
+	     return 1;
+		}
+	   return distance; 
+	};
+	
+	Locator.prototype.getRoute = function()
+	{
+	   if(routeJSON == []) {
+	     return 1;
+		}
+	   return routeJSON; 
+	};
 	/*********General Private functions*************/
 	
 	function snapLocation() // find our user

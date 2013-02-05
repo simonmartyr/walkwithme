@@ -15,6 +15,7 @@ function startSave() {
    var route = null;
    var distance = null;
    var start = null;
+   var myDataReference = new Firebase('https://walkwithme.firebaseio.com/'); 
    
       //constructor 
 	function Save() //check if geolocation enabled or use google. 
@@ -26,11 +27,11 @@ function startSave() {
 	{
 	 if(name != null && route != null && level != null && distance != null && start !=null){
 		  myDataReference.set({name : name, level : level, route : route, distance : distance, start : start}); 
-		  name = null;
-		  level = null;
-		  route = null;
-		  distance = null;
-		  start = null;
+		  name = null;  //user set
+		  level = null; //user set
+		  route = null; //locator
+		  distance = null;  //locator
+		  start = null; //locator
 		  return true;
 		  }
 		  else
@@ -59,34 +60,34 @@ function startSave() {
 	  distance = data; 
 	};
 	
-	Save.prototype.setStart =  function(start)
+	Save.prototype.setStart =  function(data)
 	{
-	  start = start; 
+	  start = data; 
 	};
 	
 	Save.prototype.getRoute =  function()
 	{
-	
+		return  route;
 	};
 	
 	Save.prototype.getName =  function()
 	{
-	
+		return name;
 	};
 	
 	Save.prototype.getLevel =  function()
 	{
-	
+		return level;
 	};
 	
 	Save.prototype.getDistance =  function()
 	{
-	
+		return distance;
 	};
 	
 	Save.prototype.getStart =  function()
 	{
-	
+		return start;
 	};
 
 	return Save;

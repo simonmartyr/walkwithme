@@ -2,8 +2,9 @@
 	var locator = new Locator();
 	var map;
 	var start;
+	var save = new Save();
 	
-  var myDataReference = new Firebase('https://walkwithme.firebaseio.com/'); //ifffy
+  //var myDataReference = new Firebase('https://walkwithme.firebaseio.com/'); 
 		
  /**********Ready*******************/
   $(document).ready(function()
@@ -114,4 +115,7 @@
 		locator.clearWatch();
 		$(".toggle").text("Start");
 		open("save");
+		save.setDistance(locator.getDistance());
+		save.setRoute(locator.getRoute());
+		save.setStart(locator.getStart());
 	}
