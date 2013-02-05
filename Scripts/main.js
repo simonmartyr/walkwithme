@@ -3,13 +3,12 @@
 	var map;
 	var start;
 	
-    var myDataReference = new Firebase('https://walkwithme.firebaseio.com/');
+  var myDataReference = new Firebase('https://walkwithme.firebaseio.com/'); //ifffy
+		
  /**********Ready*******************/
   $(document).ready(function()
   {
 		
-   
-
   });
  
 	$(window).load(function() 
@@ -68,12 +67,7 @@
  /**********Functions*******************/
 	function createNew() //Clear array start afresh
 	{ 
-		map = new Map(locator.getTracker());
-	}
-
-	function getStart()
-	{
-		return locator.getStart();
+		map = new Map(locator.getStart());
 	}
 
 	function toggle ()

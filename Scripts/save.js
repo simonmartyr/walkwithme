@@ -39,29 +39,54 @@ function startSave() {
 		  }
 	};
 	
-	Save.prototype.setRoute =  function(route)
+	Save.prototype.setRoute =  function(data)
 	{
-	  route = route;
+	  route = data;
 	};
 	
-	Save.prototype.setName =  function(name)
+	Save.prototype.setName =  function(data)
 	{
-	  name = name;
+	  name = data;
 	};
 	
-	Save.prototype.setLevel =  function(level)
+	Save.prototype.setLevel =  function(data)
 	{
-	  level = level; 
+	  level = data; 
 	};
 
-	Save.prototype.setDistance =  function(distance)
+	Save.prototype.setDistance =  function(data)
 	{
-	  distance = distance; 
+	  distance = data; 
 	};
 	
 	Save.prototype.setStart =  function(start)
 	{
 	  start = start; 
+	};
+	
+	Save.prototype.getRoute =  function()
+	{
+	
+	};
+	
+	Save.prototype.getName =  function()
+	{
+	
+	};
+	
+	Save.prototype.getLevel =  function()
+	{
+	
+	};
+	
+	Save.prototype.getDistance =  function()
+	{
+	
+	};
+	
+	Save.prototype.getStart =  function()
+	{
+	
 	};
 
 	return Save;
