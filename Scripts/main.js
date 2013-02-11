@@ -109,6 +109,36 @@
 			$(".settings").css("visibility", "hidden");
 			});
 	}
+	
+	function setValue(type)
+	{
+		if(type == "level")
+		{
+			$("#valueChange").css("visibility", "visible").html("<select  name='"+type+"'  onchange=updateValue('"+type+"')> <option >Choose One</option><option value='easy'>Easy</option><option value='medium'>Medium</option><option value='hard'>Hard</option></select>").focus();
+		}
+		else
+		{
+			$("#valueChange").css("visibility", "visible").html("<input type='text' name='"+ type + "' onchange=updateValue('"+type+"')>").focus();
+		}
+	}
+	
+	function updateValue(value)
+	{
+		switch(value){
+			case "level":
+				save.setLevel($("select[name='level']").val());
+				$("#valueChange").html("Level Set!");
+				$(".button:contains('Level')").addClass("done");
+			break;
+			case "title":
+				save.setName($("input[name='title']").val());
+				$("#valueChange").html("Title Set!");
+				$(".button:contains('Name')").addClass("done");
+			break;
+			default:
+			break;
+		}
+	}
 
 	function saveRoute() // the JSON array will be commited to the database here
 	{ 

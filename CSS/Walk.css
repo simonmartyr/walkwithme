@@ -123,6 +123,9 @@ h3 {
 text-align: right;
 }
 
+.done{
+background: rgb(21, 207, 21)  url(../Images/button.png) repeat-x !important;
+}
 
 .button {
   background: #222 url(../Images/button.png) repeat-x;

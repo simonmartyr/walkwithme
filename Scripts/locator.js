@@ -27,6 +27,7 @@ var Locator = (function(){
 	
 	Locator.prototype.clearWatch = function() //stop the watch location. 
 	{
+	  $("#signal").attr("src", "");
 	  if (watchId != null) {
 		tracker.clearWatch(watchId);
 		watchId = null;
@@ -69,7 +70,8 @@ var Locator = (function(){
 	
 	function savePosition(position)   //data from geolocation saved
 	{ 
-	  if(position.coords.accuracy <= 200){
+	  if(position.coords.accuracy  <= 150){
+			$("#signal").attr("src", "Images/tick.png"); // display that gps is good
 			var locationToSave = 
 			{  
 			"time"             : position.timestamp , 
@@ -90,7 +92,7 @@ var Locator = (function(){
 			calcDistance(path);		   
 		}
 		else{
-			console.log("poor signal");
+			$("#signal").attr("src", "Images/gpssignal.gif"); // poor signal icon
 		}
 	};
 	
