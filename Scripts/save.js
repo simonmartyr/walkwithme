@@ -28,8 +28,8 @@ function startSave() {
 	   var routesRef  = myDataReference.child("routes");
 	 if(name != null && route != null && level != null && distance != null && start !=null){
 		  name = name.replace(/[.|$|\[|\]|#|\/|]/g, ""); // remove horrible chars
-		  var route = routesRef.child(name);
-		  route.set({name : name, level : level, route : route, distance : distance, start : start}); 
+		  var routeDB = routesRef.child(name);
+		  routeDB.set({name : name, level : level, route : route, distance : distance, start : start}); 
 		  name = null;  //user set
 		  level = null; //user set
 		  route = null; //locator
