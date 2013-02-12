@@ -7,14 +7,19 @@ var ExistingLocator  = (function(){
 	  tracker = navigator.geolocation;	
 	  if (!tracker) 
 	    alert("Geolocation services are not supported by your web browser.");	
+		getLocation();
+		return true;
 	};
 	
 	ExistingLocator.prototype.getLocation = function()
 	{
-		 tracker.getCurrentPosition(function(position){
-		   var location = [position.coords.latitude, position.coords.longitude];
-		});
 		return location;
+	};
+	
+	function getLocation(){
+    tracker.getCurrentPosition(function(position){
+		  location = [position.coords.latitude, position.coords.longitude];
+		});
 	};
 
 

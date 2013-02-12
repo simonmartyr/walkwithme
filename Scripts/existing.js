@@ -1,9 +1,18 @@
 //main javascript for existing routes. 
 
 var locator = new ExistingLocator();
-var routes = new Routes(locator.getLocation());
+var routes;
 
-// $(document).ready(function()
-// {
-	
-// });
+$(window).load(function() 
+ {
+	setupRoutes();
+ });
+ 
+ function setupRoutes(){
+	routes = new Routes(locator.getLocation());
+ }
+ 
+ function showRoute(route){
+	$("#route").html("");
+	var map = new ExistingMap(route.start);
+ }
