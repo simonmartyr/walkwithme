@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="Scripts/existingLocator.js"></script>
 	<script type="text/javascript" src="Scripts/routes.js"></script>
 	<script type="text/javascript" src="Scripts/existing.js"></script>
+	<script type="text/javascript" src="Scripts/existingMap.js"></script>
 	<link href="CSS/Walk.css" rel="stylesheet" type="text/css"> 
 	<link href="CSS/existing.css" rel="stylesheet" type="text/css"> 
 	<link href="CSS/320_grid.css" media="screen and (min-width: 320px)" rel="stylesheet" type="text/css"> 
@@ -50,19 +51,24 @@
 			</div>
 			<div class="row bar">
 			<div class="slot-0-1-2-3-4-5  right">
+			<a class="settingsButton" type="back" onclick="reset()"><img  class="buttonImg" src="Images/arrow.png" /></a>
 		      <a class="settingsButton" type="home" href="index.html"><img  class="buttonImg" src="Images/home.png" /></a>
 				  <a class="settingsButton" type="help" ><img  class="buttonImg" src="Images/question.png" /></a>
 			</div>
 			</div>
 			<div class="row" id="change">
 				<div class="slot-0-1-2-3-4-5 info">
+				<div class="row">
+				<div  class="slot-0-1-2-3-4-5">
 				<div id="route" class="menu">
 					<ul>
-						<li>Close by<span>></span></li>
-						<li>10+ miles away<span>></span></li>
-						<li>25+ miles away<span>></span></li>
+						<li onclick="routes.getRoutesClose()">Close by<span>></span></li>
+						<li onclick="routes.getRoutesTen()">10+ miles away<span>></span></li>
+						<li onclick="routes.getRoutesFar()">25+ miles away<span>></span></li>
 						<li onclick="routes.getAllRoutes()">All<span>></span></li>
 					</ul>
+					</div>
+					</div>
 					</div>
 				</div>	
 			</div>

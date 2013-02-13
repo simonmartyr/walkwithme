@@ -3,15 +3,16 @@
 var Routes = (function(){ //object loading all routes and locating distance from user. 
   var allRoutes;
   var userLocation;
-  var routesClose;
-  var routesTenMiles;
-  var routesFar;
+  var routesClose = [];
+  var routesTenMiles = [];
+  var routesFar = [];
   var database = new Firebase('https://walkwithme.firebaseio.com/routes/'); 
 	
   function Routes(location)
   {
 	  userLocation = location;
 		console.log(userLocation);
+		calculateDistances ();
   };
   
   Routes.prototype.getAllRoutes = function()
@@ -23,25 +24,74 @@ var Routes = (function(){ //object loading all routes and locating distance from
 			var start = content.start;
 			var fromUser = [[start[0], start[1]], [userLocation [0], userLocation[1]]];
 			fromUser = distanceCalculation(fromUser);
-			$(".menu > ul").append("<li onclick='showRoute(\""+content.name+"\")'>"+content.name+" " +fromUser+" Miles from you<span>></span></li>");
+			$(".menu > ul").append("<li onclick='routes.getRoute(\""+content.name+"\")'>"+content.name+" " +fromUser+" Miles from you<span>></span></li>");
 			console.log(content);
 		});
   };
   
   Routes.prototype.getRoutesTen = function()
   {
-  
+    $(".menu > ul").html("");
+	 for(var i = 0; i < routesTenMiles.length || i < 20; i++){
+	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesTenMiles[i].name+"\")'>"+routesTenMiles[i].name+" <span>></span></li>");
+		if(i = 20){ //limit to 20
+	   break;
+	   }
+	 }
   };
   
   Routes.prototype.getRoutesFar = function()
   {
-  
+    $(".menu > ul").html("");
+     for(var i = 0; i < routesFar.length; i++){
+	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesFar[i].name+"\")'>"+routesFar[i].name+" <span>></span></li>");
+		if(i = 20){ //limit to 20
+	   break;
+	   }
+	}
   };
   
-  Routes.prototype.calculateDistances = function()
+    Routes.prototype.getRoutesClose = function()
+  {
+    $(".menu > ul").html("");
+	if(routesClose.length == 0){
+		$(".menu > ul").html("nothing here");
+	}
+	else
+	{
+		 for(var i = 0; i < routesClose.length ; i++){
+		   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesClose[i].name+"\")'>"+routesClose[i].name+" <span>></span></li>");
+		   if(i = 20){ //limit to 20
+			break;
+		   }
+		 }
+	}
+  };
+  
+  function calculateDistances ()
   {
 		allRoutes = database.limit(100);
-		
+		allRoutes.on('child_added', function(data){
+			var content = data.val();
+			var start = content.start;
+			var fromUser = [[start[0], start[1]], [userLocation [0], userLocation[1]]];
+			fromUser = distanceCalculation(fromUser);
+			if(fromUser < 10)
+			{
+				routesClose.push(content);
+			}
+			else{
+				if(fromUser < 25 && fromUser > 10)
+				{
+					routesTenMiles.push(content);
+				}
+				else
+				{
+				  routesFar.push(content);
+				}
+			}
+			
+		});
   };
 	
 	Routes.prototype.getRoute = function(name)
@@ -58,7 +108,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
   {
     //constant calc of after each successful snapshots
 	//Radius of the earth in:  1.609344 miles,  6371 km  | var R = (6371 / 1.609344);
-	var R = 3958.7558657440545; // Radius of earth in Miles 
+	var R = 6371; // Radius of earth in KM
 	var dLat = toRad(path[1][0]-path[0][0]);
 	var dLon = toRad(path[1][1]-path[0][1]); 
 	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
@@ -74,7 +124,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
 	}	
 	
 	function covertToMiles(value){
-		 value = value * 0.62137; 
+		  value = value * 0.6214; 
 		return value = Math.round(value * 10)/10;
 	}
 	

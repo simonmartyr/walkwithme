@@ -28,3 +28,4 @@ h3{ font-size: 50px; }
 .create a:before{ content: "Create a new route";}
 .existing a:before{ content: "Use an Existing ";}
 #map{ height: 400px; width: auto;}
+#route{ height: 400px; width: auto;}

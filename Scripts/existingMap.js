@@ -15,6 +15,26 @@ var ExistingMap = (function(){
 		});
 	  mapOptions.setZoom(17); // default 15 
 	};
+	
+	
+	ExistingMap.prototype.drawRoute = function (route){
+	  for(var i = 0; i < route.length; i++){
+		if(i + 1 != route.length){
+	      var toDraw = [[route[i]["latitude"], route[i]["longitude"]],  [route[i +1]["latitude"], route[i+1]["longitude"]]];
+		  draw(toDraw);
+		 }
+	  }
+	  function draw(path){
+		 mapOptions.drawPolyline 
+		({ 
+			path: path ,
+			strokeColor: '#131540',
+			strokeOpacity: 0.6,
+			strokeWeight: 4
+		});
+	  }
+	};
+	
 
   return ExistingMap;
-}();
+}) ();

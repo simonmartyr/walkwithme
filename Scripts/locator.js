@@ -103,7 +103,7 @@ var Locator = (function(){
 	
 	function calcDistance(path){ //constant calc of after each successful snapshots
 	//Radius of the earth in:  1.609344 miles,  6371 km  | var R = (6371 / 1.609344);
-		var R = 3958.7558657440545; // Radius of earth in Miles 
+		var R = 6371; // Radius of earth in Miles 
 		var dLat = toRad(path[1][0]-path[0][0]);
 		var dLon = toRad(path[1][1]-path[0][1]); 
 		var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
@@ -112,7 +112,6 @@ var Locator = (function(){
 		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 		var d = R * c;
 		distance = distance + d;
-		console.log(distance);
 			 
 		function toRad(Value) {
 			/** Converts numeric degrees to radians */

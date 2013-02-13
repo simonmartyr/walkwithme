@@ -35,6 +35,7 @@ body { font-size: 0.875em; padding: 15px 0px;}
 
 /*extra*/
 #map{ height: 250px; }
+#route{ height: 250px; }
 .settings{ margin-left: -160px !important;}
 .logo { width: 20%; }
 h1{ font: 2em hab;}

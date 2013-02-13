@@ -2,6 +2,7 @@
 
 var locator = new ExistingLocator();
 var routes;
+var map;
 
 $(window).load(function() 
  {
@@ -13,6 +14,14 @@ $(window).load(function()
  }
  
  function showRoute(route){
-	$("#route").html("");
-	var map = new ExistingMap(route.start);
+	map = new  ExistingMap(route.start);
+	map.drawRoute(route.route);
  }
+ 
+ 	function reset()
+	{
+		$("#route  > ul").html('<li onclick="routes.getRoutesClose()">Close by<span>></span></li>'
+						+ '<li onclick="routes.getRoutesTen()">10+ miles away<span>></span></li>'
+						+ '<li onclick="routes.getRoutesFar()">25+ miles away<span>></span></li>'
+						+ '<li onclick="routes.getAllRoutes()">All<span>></span></li>');
+	}
