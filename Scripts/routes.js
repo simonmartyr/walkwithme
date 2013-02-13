@@ -14,11 +14,12 @@ var Routes = (function(){ //object loading all routes and locating distance from
 		calculateDistances ();
   };
   
+  /*** get Route functions populate lists ****/
   Routes.prototype.getAllRoutes = function()
   {
 		$(".menu > ul").html("");
 		allRoutes = database.limit(20);
-		allRoutes.on('child_added', function (snapshot) {
+		allRoutes.on('child_added', function (snapshot) { //real time updating list. 
 	    var content = snapshot.val();
 			var start = content.start;
 			var fromUser = [[start[0], start[1]], [userLocation [0], userLocation[1]]];
@@ -32,8 +33,8 @@ var Routes = (function(){ //object loading all routes and locating distance from
   {
     $(".menu > ul").html("");
 	 if(routesTenMiles.length == 0){
-			$(".menu > ul").html("nothing here");
-			return;
+			$(".menu > ul").html("nothing here"); //no routes
+			return; 
 		}
 	 for(var i = 0; i < routesTenMiles.length; i++){
 	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesTenMiles[i].name+"\")'>"+routesTenMiles[i].name+" <span>></span></li>");
@@ -47,7 +48,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
   {
     $(".menu > ul").html("");
 	if(routesFar.length == 0){
-			$(".menu > ul").html("nothing here");
+			$(".menu > ul").html("nothing here"); //no routes
 			return;
 		}
      for(var i = 0; i < routesFar.length; i++){
@@ -62,7 +63,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
   {
 		$(".menu > ul").html("");
 		if(routesClose.length == 0){
-			$(".menu > ul").html("nothing here");
+			$(".menu > ul").html("nothing here");  //no routes
 			return;
 		}
 		 for(var i = 0; i < routesClose.length ; i++){
@@ -72,7 +73,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
 		   }
 		 }
   };
-  
+  /*** distance calulation ****/
   function calculateDistances ()
   {
 		allRoutes = database.limit(100);

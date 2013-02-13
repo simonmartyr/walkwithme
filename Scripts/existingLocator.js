@@ -16,8 +16,9 @@ var ExistingLocator  = (function(){
 		return location;
 	};
 	
-	function getLocation(){
-    tracker.getCurrentPosition(function(position){
+	function getLocation()
+	{
+      tracker.getCurrentPosition(function(position){
 		  location = [position.coords.latitude, position.coords.longitude];
 		});
 	};

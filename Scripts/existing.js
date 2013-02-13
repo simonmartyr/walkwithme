@@ -18,10 +18,10 @@ $(window).load(function()
 	map.drawRoute(route.route);
  }
  
- 	function reset()
+ 	function reset() //back to start of exisiting without reload. 
 	{
-		$("#route  > ul").html('<li onclick="routes.getRoutesClose()">Close by<span>></span></li>'
+		$("#route").html('<ul><li onclick="routes.getRoutesClose()">Close by<span>></span></li>'
 						+ '<li onclick="routes.getRoutesTen()">10+ miles away<span>></span></li>'
 						+ '<li onclick="routes.getRoutesFar()">25+ miles away<span>></span></li>'
-						+ '<li onclick="routes.getAllRoutes()">All<span>></span></li>');
-	}
+						+ '<li onclick="routes.getAllRoutes()">All<span>></span></li></ul>');
+	 }
