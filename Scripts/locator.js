@@ -27,7 +27,7 @@ var Locator = (function(){
 	
 	Locator.prototype.clearWatch = function() //stop the watch location. 
 	{
-	  $("#signal").attr("src", "");
+	  $("#signal").css("visibility", "hidden");
 	  if (watchId != null) {
 		tracker.clearWatch(watchId);
 		watchId = null;
@@ -71,7 +71,7 @@ var Locator = (function(){
 	function savePosition(position)   //data from geolocation saved
 	{ 
 	  if(position.coords.accuracy  <= 150){
-			$("#signal").attr("src", "Images/tick.png"); // display that gps is good
+			$("#signal").attr("src", "Images/tick.png").css("visibility", "visible"); // display that gps is good
 			var locationToSave = 
 			{  
 			"time"             : position.timestamp , 
@@ -92,7 +92,7 @@ var Locator = (function(){
 			calcDistance(path);		   
 		}
 		else{
-			$("#signal").attr("src", "Images/gpssignal.gif"); // poor signal icon
+			$("#signal").attr("src", "Images/gpssignal.gif").css("visibility", "visible"); // poor signal icon
 		}
 	};
 	

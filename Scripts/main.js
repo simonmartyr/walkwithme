@@ -81,12 +81,15 @@
 			saveRoute();
 		}
 	}
+	
+	function notify() //display save message
+	{
+			$("#note").css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 4000);
+	}
 
 	function open (page)
 	{
 	 $(".overlay").fadeIn(300, function() {
-				 $(".overlay").css("visibility", "visible");
-				 $(".settings").css("visibility", "visible");
 				 switch(page)
 				 {
 					 case "save":
@@ -98,6 +101,8 @@
 					 default:
 					 break;
 				 }
+				 $(".overlay").css("visibility", "visible");
+				 $(".settings").css("visibility", "visible");
 				});
 	}
 
@@ -148,6 +153,8 @@
 		save.setDistance(locator.getDistance());
 		save.setRoute(locator.getRoute());
 		save.setStart(locator.getStart());
+		close ();
+		notify();
 	}
 	
 
