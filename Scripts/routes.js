@@ -11,7 +11,6 @@ var Routes = (function(){ //object loading all routes and locating distance from
   function Routes(location)
   {
 	  userLocation = location;
-		console.log(userLocation);
 		calculateDistances ();
   };
   
@@ -32,9 +31,13 @@ var Routes = (function(){ //object loading all routes and locating distance from
   Routes.prototype.getRoutesTen = function()
   {
     $(".menu > ul").html("");
-	 for(var i = 0; i < routesTenMiles.length || i < 20; i++){
+	 if(routesTenMiles.length == 0){
+			$(".menu > ul").html("nothing here");
+			return;
+		}
+	 for(var i = 0; i < routesTenMiles.length; i++){
 	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesTenMiles[i].name+"\")'>"+routesTenMiles[i].name+" <span>></span></li>");
-		if(i = 20){ //limit to 20
+		if(i  == 20){ //limit to 20
 	   break;
 	   }
 	 }
@@ -43,9 +46,13 @@ var Routes = (function(){ //object loading all routes and locating distance from
   Routes.prototype.getRoutesFar = function()
   {
     $(".menu > ul").html("");
+	if(routesFar.length == 0){
+			$(".menu > ul").html("nothing here");
+			return;
+		}
      for(var i = 0; i < routesFar.length; i++){
 	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesFar[i].name+"\")'>"+routesFar[i].name+" <span>></span></li>");
-		if(i = 20){ //limit to 20
+		if(i == 20){ //limit to 20
 	   break;
 	   }
 	}
@@ -53,19 +60,17 @@ var Routes = (function(){ //object loading all routes and locating distance from
   
     Routes.prototype.getRoutesClose = function()
   {
-    $(".menu > ul").html("");
-	if(routesClose.length == 0){
-		$(".menu > ul").html("nothing here");
-	}
-	else
-	{
+		$(".menu > ul").html("");
+		if(routesClose.length == 0){
+			$(".menu > ul").html("nothing here");
+			return;
+		}
 		 for(var i = 0; i < routesClose.length ; i++){
 		   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesClose[i].name+"\")'>"+routesClose[i].name+" <span>></span></li>");
-		   if(i = 20){ //limit to 20
+		   if(i == 20){ //limit to 20
 			break;
 		   }
 		 }
-	}
   };
   
   function calculateDistances ()
