@@ -8,15 +8,17 @@
 		
  /**********Ready*******************/
 
-   if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
-		document.addEventListener("deviceready", createNew, false);
-  }
-  else{		
-    $(window).load(function() 
-	{	
-			createNew() ;
-	 });
+ $(window).load(function() {
+  if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+    $(document).bind('deviceready', function () { 
+        createNew() ;
+    });
 	}
+	else{
+		createNew() ;
+	}
+});
+
  
  
  /**********Binds**********************/

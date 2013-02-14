@@ -4,15 +4,17 @@ var locator = new ExistingLocator();
 var routes;
 var map;
 
-if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
-	document.addEventListener("deviceready", setupRoutes, false);
-}
-else{
-	$(window).load(function() 
-	 {
+$(window).load(function() {
+  if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+    $(document).bind('deviceready', function () { 
+        setupRoutes();
+    });
+	}
+	else{
 		setupRoutes();
-	 });
- }
+	}
+});
+
  function setupRoutes(){
 	routes = new Routes(locator.getLocation());
 	routes.calculateDistances();
