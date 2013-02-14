@@ -22,7 +22,7 @@ var Locator = (function(){
 	
 	Locator.prototype.watchLocation = function () //will capture the users movement
 	{ 
-	    watchId = tracker.watchPosition(savePosition,  displayError, {enableHighAccuracy:true, timeout:10000, frequency: 15000, maximumAge:30000 });			
+	    watchId = tracker.watchPosition(savePosition,  displayError, {enableHighAccuracy: true, timeout: 10000, maximumAge: 20000 });			
 	};
 	
 	Locator.prototype.clearWatch = function() //stop the watch location. 
@@ -80,16 +80,23 @@ var Locator = (function(){
 			"heading"     : position.coords.heading,
 			"speed"          : position.coords.speed
 			};		
-			routeJSON.push(locationToSave);
-			
-			map.center(position.coords.latitude, position.coords.longitude);
 			var lastIndex = routeJSON.length - 1;
-			if(lastIndex == 0){
+			if(lastIndex == -1){ //first time? don't draw. 
+			    routeJSON.push(locationToSave); //save to json
 				return;
 			}
-			var path = [[routeJSON[lastIndex - 1]["latitude"], routeJSON[lastIndex - 1]["longitude"]] , [routeJSON[lastIndex]["latitude"], routeJSON[lastIndex]["longitude"]]];
-			map.route(path);
-			calcDistance(path);		   
+			
+			var path = [[routeJSON[lastIndex ]["latitude"], routeJSON[lastIndex ]["longitude"]] , [locationToSave["latitude"], locationToSave["longitude"]]];
+			var check  = calcDistance(path);		  
+			if(check >  0.25) //250 meters from last location
+			{
+			  return; 
+			}
+			distance = distance + check;  //update distance
+			routeJSON.push(locationToSave); //save to json
+			map.center(position.coords.latitude, position.coords.longitude); //centre map
+			map.route(path); //draw
+			 
 		}
 		else{
 			$("#signal").attr("src", "Images/gpssignal.gif").css("visibility", "visible"); // poor signal icon
@@ -111,7 +118,7 @@ var Locator = (function(){
 							Math.sin(dLon/2) * Math.sin(dLon/2); 
 		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 		var d = R * c;
-		distance = distance + d;
+		return d;
 			 
 		function toRad(Value) {
 			/** Converts numeric degrees to radians */

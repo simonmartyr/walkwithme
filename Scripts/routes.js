@@ -24,7 +24,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
 			var start = content.start;
 			var fromUser = [[start[0], start[1]], [userLocation [0], userLocation[1]]];
 			fromUser = distanceCalculation(fromUser);
-			$(".menu > ul").append("<li onclick='routes.getRoute(\""+content.name+"\")'>"+content.name+" " +fromUser+" Miles from you<span>></span></li>");
+			$(".menu > ul").append("<li onclick='routes.getRoute(\""+content.name+"\")'> " +fromUser+" Miles aways "+content.name+" <span>></span></li>");
 		});
   };
   
@@ -36,7 +36,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
 			return; 
 		}
 	 for(var i = 0; i < routesTenMiles.length; i++){
-	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesTenMiles[i].name+"\")'>"+routesTenMiles[i].name+" <span>></span></li>");
+	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesTenMiles[i].name+"\")'> Distance:"+covertToMiles(routesTenMiles[i].distance)+" Miles "+routesTenMiles[i].name+" <span>></span></li>");
 		if(i  == 20){ //limit to 20
 	   break;
 	   }
@@ -51,7 +51,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
 			return;
 		}
      for(var i = 0; i < routesFar.length; i++){
-	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesFar[i].name+"\")'>"+routesFar[i].name+" <span>></span></li>");
+	   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesFar[i].name+"\")'>"+routesFar[i].name+" Distance:"+covertToMiles(routesFar[i].distance)+" Miles<span>></span></li>");
 		if(i == 20){ //limit to 20
 	   break;
 	   }
@@ -66,7 +66,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
 			return;
 		}
 		 for(var i = 0; i < routesClose.length ; i++){
-		   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesClose[i].name+"\")'>"+routesClose[i].name+" <span>></span></li>");
+		   $(".menu > ul").append("<li onclick='routes.getRoute(\""+routesClose[i].name+"\")'>"+routesClose[i].name+"  Distance:"+covertToMiles(routesClose[i].distance)+" Miles <span>></span></li>");
 		   if(i == 20){ //limit to 20
 			break;
 		   }
@@ -128,13 +128,15 @@ var Routes = (function(){ //object loading all routes and locating distance from
 	  return Value * Math.PI / 180;
 	}	
 	
-	function covertToMiles(value){
-		  value = value * 0.6214; 
-		return value = Math.round(value * 10)/10;
-	}
+	
 	
 	return d;
   };
+  
+  function covertToMiles(value){
+		  value = value * 0.6214; 
+		return value = Math.round(value * 10)/10;
+	};
   
   return Routes;
 

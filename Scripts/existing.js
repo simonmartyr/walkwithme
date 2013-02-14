@@ -24,4 +24,5 @@ $(window).load(function()
 						+ '<li onclick="routes.getRoutesTen()">10+ miles away<span>></span></li>'
 						+ '<li onclick="routes.getRoutesFar()">25+ miles away<span>></span></li>'
 						+ '<li onclick="routes.getAllRoutes()">All<span>></span></li></ul>');
+		 $("#route").removeAttr("style");
 	 }

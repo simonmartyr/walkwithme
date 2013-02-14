@@ -79,7 +79,11 @@ h3 {
  background:  #C3C7D1; /* Firefox */
 }
 
+#route{
+	overflow: scroll;
+	overflow-x:hidden;
 
+}
 #map {
 	height: 400px;
 }
