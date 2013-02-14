@@ -153,8 +153,6 @@
 		save.setDistance(locator.getDistance());
 		save.setRoute(locator.getRoute());
 		save.setStart(locator.getStart());
-		close ();
-		notify();
 	}
 	
 

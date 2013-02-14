@@ -35,6 +35,8 @@ function startSave() {
 		  route = null; //locator
 		  distance = null;  //locator
 		  start = null; //locator
+			close ();
+			notify();
 		  return true;
 		  }
 		  else
