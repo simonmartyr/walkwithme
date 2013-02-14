@@ -25,7 +25,6 @@ var Routes = (function(){ //object loading all routes and locating distance from
 			var fromUser = [[start[0], start[1]], [userLocation [0], userLocation[1]]];
 			fromUser = distanceCalculation(fromUser);
 			$(".menu > ul").append("<li onclick='routes.getRoute(\""+content.name+"\")'>"+content.name+" " +fromUser+" Miles from you<span>></span></li>");
-			console.log(content);
 		});
   };
   
