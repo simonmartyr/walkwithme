@@ -70,7 +70,7 @@ var Locator = (function(){
 	
 	function savePosition(position)   //data from geolocation saved
 	{ 
-	  if(position.coords.accuracy  <= 150){
+	  if(position.coords.accuracy  <= 200){
 			$("#signal").attr("src", "Images/tick.png").css("visibility", "visible"); // display that gps is good
 			var locationToSave = 
 			{  
