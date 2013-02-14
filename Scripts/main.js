@@ -65,7 +65,7 @@
  /**********Functions*******************/
 	function createNew() //Clear array start afresh
 	{ 
-		map = new Map(locator.getStart());
+		map = new Map();
 	}
 
 	function toggle ()

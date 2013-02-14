@@ -3,18 +3,20 @@
 var Map = (function(){
 
  var mapOptions;
- var startLocation;
  var options =  true;
 
-function Map(start) //settup Gmaps within the correct div - start co-ods
+function Map() //settup Gmaps within the correct div - start co-ods
 {	//make map object into div #maps
-	  mapOptions = new GMaps({
-		div: '#map',
-		disableDefaultUI:  options,
-		lat: start[0],
-		lng: start[1],
-		});
-	 mapOptions.setZoom(17); // default 15 
+	tracker = navigator.geolocation;	
+	 tracker.getCurrentPosition(function(position){
+		  mapOptions = new GMaps({
+			div: '#map',
+			disableDefaultUI:  options,
+			lat: position.coords.latitude,
+			lng: position.coords.longitude,
+			});
+		 mapOptions.setZoom(17); // default 15 
+	});
 };
 
  Map.prototype.route = function(path) //draw route onto map
