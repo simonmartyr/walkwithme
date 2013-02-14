@@ -2,15 +2,15 @@
 
 var Routes = (function(){ //object loading all routes and locating distance from user. 
   var allRoutes;
-  var userLocation;
+  var userLocation = [];
   var routesClose = [];
   var routesTenMiles = [];
   var routesFar = [];
   var database = new Firebase('https://walkwithme.firebaseio.com/routes/'); 
 	
-  function Routes(location)
+  function Routes()
   {
-	  userLocation = location;
+    calculateDistances ();
   };
   
   /*** get Route functions populate lists ****/
@@ -72,29 +72,34 @@ var Routes = (function(){ //object loading all routes and locating distance from
 		 }
   };
   /*** distance calulation ****/
-   Routes.prototype.calculateDistances = function ()
+   function calculateDistances ()
   {
-		allRoutes = database.limit(100);
-		allRoutes.on('child_added', function(data){
-			var content = data.val();
-			var start = content.start;
-			var fromUser = [[start[0], start[1]], [userLocation [0], userLocation[1]]];
-			fromUser = distanceCalculation(fromUser);
-			if(fromUser < 10)
-			{
-				routesClose.push(content);
-			}
-			else{
-				if(fromUser < 25 && fromUser > 10)
+		 tracker = navigator.geolocation;	
+		 tracker.getCurrentPosition(function(position){
+		    userLocation = [];
+			userLocation.push(position.coords.latitude);
+			userLocation.push(position.coords.longitude);
+			allRoutes = database.limit(100);
+			allRoutes.on('child_added', function(data){
+				var content = data.val();
+				var start = content.start;
+				var fromUser = [[start[0], start[1]], [userLocation [0], userLocation[1]]];
+				fromUser = distanceCalculation(fromUser);
+				if(fromUser < 10)
 				{
-					routesTenMiles.push(content);
+					routesClose.push(content);
 				}
-				else
-				{
-				  routesFar.push(content);
+				else{
+					if(fromUser < 25 && fromUser > 10)
+					{
+						routesTenMiles.push(content);
+					}
+					else
+					{
+					  routesFar.push(content);
+					}
 				}
-			}
-			
+			});
 		});
   };
 	

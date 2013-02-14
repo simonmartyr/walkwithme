@@ -9,14 +9,8 @@
  /**********Ready*******************/
 
  $(window).load(function() {
-  if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
-    $(document).bind('deviceready', function () { 
-        createNew() ;
-    });
-	}
-	else{
+
 		createNew() ;
-	}
 });
 
  

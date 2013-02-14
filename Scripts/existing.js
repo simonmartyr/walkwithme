@@ -1,23 +1,15 @@
 //main javascript for existing routes. 
 
-var locator = new ExistingLocator();
+//var locator = new ExistingLocator();
 var routes;
 var map;
 
 $(window).load(function() {
-  if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
-    $(document).bind('deviceready', function () { 
-        setupRoutes();
-    });
-	}
-	else{
 		setupRoutes();
-	}
 });
 
  function setupRoutes(){
-	routes = new Routes(locator.getLocation());
-	routes.calculateDistances();
+	routes = new Routes();
  }
  
  function showRoute(route){
