@@ -7,15 +7,16 @@
   //var myDataReference = new Firebase('https://walkwithme.firebaseio.com/'); 
 		
  /**********Ready*******************/
-  $(document).ready(function()
-  {
-		
-  });
- 
-	$(window).load(function() 
+
+   if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+		document.addEventListener("deviceready", createNew, false);
+  }
+  else{		
+    $(window).load(function() 
 	{	
-		createNew() ;
-	});
+			createNew() ;
+	 });
+	}
  
  
  /**********Binds**********************/

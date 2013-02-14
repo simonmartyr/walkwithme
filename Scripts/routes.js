@@ -11,7 +11,6 @@ var Routes = (function(){ //object loading all routes and locating distance from
   function Routes(location)
   {
 	  userLocation = location;
-		calculateDistances ();
   };
   
   /*** get Route functions populate lists ****/
@@ -73,7 +72,7 @@ var Routes = (function(){ //object loading all routes and locating distance from
 		 }
   };
   /*** distance calulation ****/
-  function calculateDistances ()
+   Routes.prototype.calculateDistances = function ()
   {
 		allRoutes = database.limit(100);
 		allRoutes.on('child_added', function(data){
@@ -127,9 +126,6 @@ var Routes = (function(){ //object loading all routes and locating distance from
 	/** Converts numeric degrees to radians */
 	  return Value * Math.PI / 180;
 	}	
-	
-	
-	
 	return d;
   };
   
