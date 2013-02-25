@@ -13,7 +13,8 @@ $(window).load(function() {
  }
  
  function showRoute(route){
-	map = new  ExistingMap(route.start);
+	var routeStart =[route.route[0]["latitude"] ,   route.route[0]["longitude"]];
+	map = new  ExistingMap(routeStart);
 	map.drawRoute(route.route);
  }
  
