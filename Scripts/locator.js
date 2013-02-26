@@ -65,7 +65,7 @@ var Locator = (function(){
 	{
 		 tracker.getCurrentPosition(function(position){
 		   startLocation = [position.coords.latitude, position.coords.longitude];
-		});
+		},   displayError,   {enableHighAccuracy: true});
 	};
 	
 	function savePosition(position)   //data from geolocation saved

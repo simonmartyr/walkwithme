@@ -20,7 +20,7 @@ var ExistingLocator  = (function(){
 	{
       tracker.getCurrentPosition(function(position){
 		  location = [position.coords.latitude, position.coords.longitude];
-		});
+		},   function(){ alert("gps error") },   {enableHighAccuracy: true});
 	};
 
 

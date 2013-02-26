@@ -16,7 +16,7 @@ function Map() //settup Gmaps within the correct div - start co-ods
 			lng: position.coords.longitude,
 			});
 		 mapOptions.setZoom(17); // default 15 
-	});
+	}, function() { alert("gps error") },   {enableHighAccuracy: true} ); //force gps
 };
 
  Map.prototype.route = function(path) //draw route onto map
