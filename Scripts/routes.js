@@ -108,6 +108,9 @@ var Routes = (function(){ //object loading all routes and locating distance from
 		var requestedRoute = new Firebase('https://walkwithme.firebaseio.com/routes/'+name+'/');
 		requestedRoute.once('value', function(data){
 			var selectedRoute = data.val();
+			if(selectedRoute == null){
+				return;
+			}
 			showRoute(selectedRoute);
 		});
 	};
