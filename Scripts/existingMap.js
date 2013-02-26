@@ -35,6 +35,11 @@ var ExistingMap = (function(){
 	  }
 	};
 	
+	 ExistingMap.prototype.sizeChange =  function() //change of resoultion fill up screen area. 
+	{
+    mapOptions.refresh();
+	};
+	
 
   return ExistingMap;
 }) ();
