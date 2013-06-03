@@ -2,6 +2,7 @@
 	var locator = new Locator();
 	var map;
 	var start;
+	var settingsContent; // settings dialog 
 	var save = new Save();
 	
   //var myDataReference = new Firebase('https://walkwithme.firebaseio.com/'); 

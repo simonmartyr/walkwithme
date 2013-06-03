@@ -13,12 +13,28 @@
 	  mode of transport
 	  restart
  */
+	 
  
  function startSettings() {
-   $.ajax({
-		url: "widgets/settings.html",
-		success: function(data){
-		  $("#message").html(data);
-		}
+ 
+	if(typeof settingsContent === 'undefined'){ // we only want to Ajax once. 
+    $.ajax({
+		  url: "widgets/settings.html",
+		  success: function(data){
+			  settingsContent =  data; 
+				settingBox();
+		  }
 		});
+	}
+	else
+	{
+	  settingBox();
+	}
  }
+ 
+ function settingBox() {
+   if(typeof settingsContent !== 'undefined'){
+     $("#message").html(settingsContent);
+   }
+ }
+ 
